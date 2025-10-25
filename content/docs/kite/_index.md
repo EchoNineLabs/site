@@ -1,7 +1,7 @@
 ---
-title: Folder
+title: Kite
 type: docs
-prev: docs/first-page
+prev: docs/
 next: docs/folder/leaf
 sidebar:
   open: true

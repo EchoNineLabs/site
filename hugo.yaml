@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: My Site
+title: Echo Nine
 
 # import hextra as module
 module:
@@ -21,26 +21,23 @@ menu:
     - name: Docs
       pageRef: /docs
       weight: 1
-    - name: About
-      pageRef: /about
-      weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
+    #- name: About
+    #  pageRef: /about
+    #  weight: 2
+    - name: Discord ↗
+      url: "https://discord.gg/xYcjBKqkDz"
       weight: 3
+      #params:
+        #icon: x-discord
     - name: Search
       weight: 4
       params:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      url: "https://github.com/EchoNineLabs"
       params:
         icon: github
-    - name: Twitter
-      weight: 6
-      url: "https://twitter.com/"
-      params:
-        icon: x-twitter
 
 params:
   navbar:
@@ -53,4 +50,4 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    base: "https://github.com/EchoNineLabs/docs/edit/master/content"
