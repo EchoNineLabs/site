@@ -1,10 +1,12 @@
 ---
 title: Kite
 type: docs
-prev: docs/
-next: docs/folder/leaf
-sidebar:
-  open: true
+weight: 1
 ---
 
-Pages can be organized into folders.
+Explore the following sections to learn more about Kite:
+
+{{< cards >}}
+  {{< card link="./getting-started" title="Getting Started" icon="information-circle" >}}
+  {{< card link="./commands" title="Commands" icon="cog" >}}
+{{< /cards >}}

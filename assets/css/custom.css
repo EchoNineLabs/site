@@ -1,0 +1,31 @@
+.content {
+    margin-top: 2em !important;
+}
+
+table, th, td {
+  border: transparent solid 1px;
+}
+
+th, td {
+    padding: 4px !important; 
+
+    .hextra-icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+}
+
+.no-decoration > ul {
+    list-style-type: none !important;
+    font-size: 24px !important;
+
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+span.c1 {
+    font-style: normal !important;
+}
