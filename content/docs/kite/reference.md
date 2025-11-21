@@ -84,15 +84,15 @@ fun BukkitScheduler.runTaskAsync(delayTicks: Long = 0, task: (BukkitRunnable) ->
 
 // Schedules a repeating task to start immediately or after specified delay in ticks.
 fun BukkitScheduler.runTaskTimer(
-    periodTicks: Long,
     delayTicks: Long = 0,
+    periodTicks: Long,
     task: (BukkitRunnable) -> Unit
 ): BukkitTask
 
 // Schedules an asynchronous repeating task to start immediately or after specified delay in ticks.
 fun BukkitScheduler.runTaskTimerAsync(
-    periodTicks: Long,
     delayTicks: Long = 0,
+    periodTicks: Long,
     task: (BukkitRunnable) -> Unit
 ): BukkitTask
 
@@ -100,7 +100,31 @@ fun BukkitScheduler.runTaskTimerAsync(
 {{< /tab >}}
 
 {{< tab >}}
-Examples!!! TODO
+Broadcasting an automated message every 30 seconds.
+```kts
+fun resetQueue(): ListIterator<String> {
+    return listOf(
+        "<dark_gray>› <gray>Don't forget to leave a star on Kite repository!",
+        "<dark_gray>› <gray>Did you know you can access APIs of other plugins?",
+        "<dark_gray>› <gray>Join our Discord: <click:open_url:'https://discord.gg/xYcjBKqkDz'><yellow>discord.gg/xYcjBKqkDz</click>"
+    ).listIterator()
+}
+
+// Queue of automated messages.
+var messagesQueue = resetQueue()
+
+onLoad {
+    // Scheduling a repeating task to run every 10 seconds.
+    server.scheduler.runTaskTimer(delayTicks = 1 * 20, periodTicks =  10 * 20) {
+        // Resetting the queue if it has reached the end.
+        if (messagesQueue.hasNext() == false)
+            messagesQueue = resetQueue()
+        // Sending a random message from the list.
+        server.sendRichMessage(messagesQueue.next())
+    }
+}
+```
+
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -138,7 +162,34 @@ fun AsyncScheduler.runAtFixedRate(
 {{< /tab >}}
 
 {{< tab >}}
-Examples!!! TODO
+Command to asynchronously fetch country name using external [**get.geojs.io**](https://get.geojs.io) service.
+```kt {filename="Examples"}
+import java.lang.Thread
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+
+val client = HttpClient.newHttpClient()
+
+command("what_is_my_country") {
+    permission = "kite.command.what_is_my_country"
+    execute { sender, args ->
+        if (sender is Player) {
+            server.asyncScheduler.runNow {
+                sender.sendRichMessage("<dark_gray>› <gray>Running on: <yellow>${Thread.currentThread().name}<gray> (${if (Bukkit.isPrimaryThread()) "blocking" else "non-blocking"}<gray>)")
+                // Creating and sending request that gets the country name from player's IP address.
+                val request = HttpRequest.newBuilder().GET().uri(URI("https://get.geojs.io/v1/ip/country/full/${sender.address.address}")).build()
+                val country = client.send(request, HttpResponse.BodyHandlers.ofString()).body().trim()
+                // Sending response message to the command sender.
+                sender.sendRichMessage("<dark_gray>› <gray>Query Response: <yellow>$country")
+            }
+        }
+    }
+}
+```
+![Output](https://i.postimg.cc/SswhHSLv/image.png)
+
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -149,7 +200,7 @@ Examples!!! TODO
 
 #### [**EntityScheduler**](https://jd.papermc.io/paper/io/papermc/paper/threadedregions/scheduler/EntityScheduler.html)
 <sup>https://jd.papermc.io/paper/1.21.10/io/papermc/paper/threadedregions/scheduler/EntityScheduler.html</sup>  
-Entity scheduler allows tasks to be scheduled to be executed on the region that owns the entity. This is useful when dealing with entity teleportation, as once an entity begins an asynchronous teleport the entity cannot tick until the teleport has completed, and the timing is undefined.
+Entity scheduler allows tasks to be scheduled and executed on the region that owns the entity. This is useful when dealing with entity teleportation, as once an entity begins an asynchronous teleport the entity cannot tick until the teleport has completed, and the timing is undefined.
 
 {{< tabs items="Functions, Examples" >}}
 
