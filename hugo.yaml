@@ -18,36 +18,51 @@ markup:
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
-      weight: 1
-    #- name: About
-    #  pageRef: /about
-    #  weight: 2
-    - name: Discord ↗
-      url: "https://discord.gg/xYcjBKqkDz"
-      weight: 3
-      #params:
-        #icon: x-discord
     - name: Search
-      weight: 4
+      weight: 2
       params:
         type: search
+    - name: Discord
+      weight: 4
+      url: "https://discord.gg/xYcjBKqkDz"
+      params:
+        icon: discord
     - name: GitHub
       weight: 5
       url: "https://github.com/EchoNineLabs"
       params:
         icon: github
+    - name: Modrinth
+      weight: 6
+      url: "https://modrinth.com/organization/echonine"
+      params:
+        icon: modrinth
+    - name: Hangar
+      weight: 6
+      url: "https://hangar.papermc.io/EchoNine"
+      params:
+        icon: hangar
 
 params:
+
+  banner:
+    key: "work-in-progress"
+    message: |
+      Documentation page is still under construction, and some information may be inaccurate or missing...
+
+  page:
+    width: wide
+
   navbar:
     displayTitle: true
     displayLogo: false
+    width: wide
 
   footer:
     displayCopyright: false
-    displayPoweredBy: true
+    displayPoweredBy: false
 
   editURL:
     enable: true
     base: "https://github.com/EchoNineLabs/docs/edit/master/content"
+

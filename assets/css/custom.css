@@ -1,0 +1,54 @@
+/* Increased margin between breadcrumbs and page content */
+.content {
+    margin-top: 2em !important;
+}
+
+/* Invisible table borders; TO-DO: Should be backed by some class */
+table, th, td {
+  border: transparent solid 1px;
+}
+
+th, td {
+    padding: 4px !important; 
+
+    .hextra-icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+}
+
+.no-decoration > ul {
+    list-style-type: none !important;
+    font-size: 24px !important;
+}
+
+/* No underline on urls */
+a {
+    text-decoration: none !important;
+}
+
+/* No italic text on code block comments */
+span.c1 {
+    font-style: normal !important;
+}
+
+section.reference {
+
+    h4 + p:has(a) {
+        margin-top: 0 !important;
+    }
+
+}
+
+
+.project-selector {
+
+    .hextra-cards {
+
+        :first-child {
+            
+        }
+
+    }
+
+}
