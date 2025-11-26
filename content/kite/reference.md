@@ -3,10 +3,11 @@ title: Reference
 type: docs
 weight: 3
 ---
+Kite provides very basic set of APIs that would otherwise require user to manually manage lifecycle of some features. Our APIs include but are not limited to:
+
+<br>
 
 <section class="reference">
-
-Kite provides very basic set of APIs that would otherwise require user to manually manage lifecycle of some features. Our APIs include but are not limited to:
 
 [**# Script Context**](#script-context)  
 <sup>Various methods to identify context the script is running in.</sup>  
@@ -185,7 +186,6 @@ fun AsyncScheduler.runAtFixedRate(
 {{< tab >}}
 Command to asynchronously fetch country name using external [**get.geojs.io**](https://get.geojs.io) service.
 ```kt {filename="Examples"}
-import java.lang.Thread
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
@@ -278,7 +278,8 @@ on<PlayerJoinEvent> { event ->
 
 #### [**GlobalRegionScheduler**](https://jd.papermc.io/paper/io/papermc/paper/threadedregions/scheduler/GlobalRegionScheduler.html)
 <sup>https://jd.papermc.io/paper/io/papermc/paper/threadedregions/scheduler/GlobalRegionScheduler.html</sup>  
-Global region scheduler can be used to schedule tasks that will execute on the global region. It falls back to main server thread when running Paper instead of Folia.
+Global region scheduler can be used to schedule tasks that will execute on the global region thread.  
+This scheduler falls back to the main server thread if not running Folia.
 
 {{< tabs items="Functions" >}}
 
