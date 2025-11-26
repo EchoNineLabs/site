@@ -12,6 +12,10 @@ weight: 1
   {{< card link="https://github.com/EchoNineLabs/Kite" title="GitHub" icon="github" >}}
 {{< /cards >}}
 
+<br>
+
+<div class="features">
+
 |                             |                                                                                                                      |
 | :-------------------------: | :------------------------------------------------------------------------------------------------------------------- |
 | {{< icon "fast-forward" >}} | <u>**High Performance**</u><br>Scripts are compiled to achieve near-native performance.                              |
@@ -21,6 +25,7 @@ weight: 1
 | {{< icon "globe-alt" >}}    | <u>**Access Everything**</u><br>Full access to Bukkit API, built-in libraries and loaded plugins.                    |
 | {{< icon "collection" >}}   | <u>**Script Organization**</u><br>Split scripts into multiple files or keep it simple with one file per script.      |
 
+</div>
 
 <br>
 
@@ -161,5 +166,15 @@ In case you run into a type conflict problems, see:
   {{< card link="/docs/kite/troubleshooting#conflicting-imports" title="Troubleshooting" subtitle="Conflicting Imports" >}}
 {{< /cards >}}
 
+<br>
+
+### Reference & Examples
+Learn more about provided APIs and examples on the [**Reference**](/kite/reference) page.
+
+{{< cards cols="3" >}}
+  {{< card link="/docs/kite/reference" title="Reference" subtitle="Kite built-in APIs reference." >}}
+{{< /cards >}}
 
 {{% /steps %}}
+
+<br>
