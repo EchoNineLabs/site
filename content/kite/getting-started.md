@@ -8,7 +8,7 @@ weight: 1
 
 {{< cards cols="3" >}}
   {{< card link="https://modrinth.com/plugin/kite" title="Modrinth" icon="modrinth" >}}
-  {{< card link="https://hangar.papermc.io/Saturn/Kite" title="Hangar" icon="hangar" >}}
+  {{< card link="https://hangar.papermc.io/EchoNine/Kite" title="Hangar" icon="hangar" >}}
   {{< card link="https://github.com/EchoNineLabs/Kite" title="GitHub" icon="github" >}}
 {{< /cards >}}
 
