@@ -163,8 +163,8 @@ Async scheduler can be used to schedule tasks to execute asynchronously from the
 
 {{< tab >}}
 ```kts {filename="Functions"}
-// Schedules an asynchronous task to run on the next tick.
-fun AsyncScheduler.runNow(task: (KiteScheduledTask) -> Unit): KiteScheduledTask
+// Schedules an asynchronous task to run immediately.
+fun AsyncScheduler.runNow(task: () -> Unit): ScheduledTask
 
 // Schedules an asynchronous task to run after specified delay.
 fun AsyncScheduler.runDelayed(
