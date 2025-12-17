@@ -40,3 +40,19 @@ For the time being you can clone Kite repository and use `runServer` or `runFoli
 
 ### External Libraries
 Dynamic library resolver - either via `@file:Repository` and `@file:Dependency` annotations or `libraries.json` configuration file - will be added in a future Kite release.
+
+<br>
+
+### Unresolved References
+Certain forks introduce breaking changes to class loading and/or runtime isolation. This usually cause ***all*** scripts to fail compilation due to **unresolved reference** errors. We provide an experimental workaround for this problem but it is not guaranteed to work in all cases.
+
+This issue is ***not*** present in **Paper** itself or in any popular fork such as **Folia**, **Purpur** or **Pufferfish**.
+
+By adding following flag to JVM arguments, Kite will try to explicitly add server `.jar` to the compilation classpath.
+```sh
+-Dkite.compat.dynamic-server-jar=true
+```
+Location of the file is determined by looking up *some* known class and checking it's source.
+
+In case you're still experiencing issues, don't hesitate to let us know.  
+**https://github.com/EchoNineLabs/Kite/issues/new**
