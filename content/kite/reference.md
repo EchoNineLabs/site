@@ -35,6 +35,9 @@ val plugin: JavaPlugin
 
 // Server instance.
 val server: Server
+
+// Logger instance.
+val logger: ComponentLogger
 ```
 
 <br>
