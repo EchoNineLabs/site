@@ -31,13 +31,6 @@ val sound = AdventureSound.sound("minecraft:entity.shulker.shoot", SoundSource.B
 
 <br>
 
-### Code Completions
-At this time, IntelliJ IDEA integration is very limited, difficult to set-up and often breaks. We plan to explore this topic in the future and can hopefully provide a step-by-step guide for setting up a proper development environment.
-
-For the time being you can clone Kite repository and use `runServer` or `runFolia` task to quickly start a development server running **Kite**, **PlaceholderAPI** and **MiniPlaceholders**. Code completions will not work but you can easily search through dependencies in order to find function or class you're looking for.
-
-<br>
-
 ### External Libraries
 Dynamic library resolver - either via `@file:Repository` and `@file:Dependency` annotations or `libraries.json` configuration file - will be added in a future Kite release.
 
