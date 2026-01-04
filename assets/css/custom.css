@@ -3,6 +3,30 @@
     margin-top: 2em !important;
 }
 
+a[href*="getting-started"]::before { content: "🚀"; }
+
+.sidebar a:has-text("Getting Started")::before {
+  content: "🚀 ";
+}
+
+/* Kite Sidebar Color */
+.hextra-sidebar-container > .hextra-scrollbar:nth-child(2) > ul:nth-child(2) {
+    > li:nth-child(1) {
+        --hx-color-primary-600: #fe7e44 !important;
+        --hx-color-primary-400: #fe7e44 !important;
+    }
+}
+
+/* Kite Sidebar Color (small screens) */
+@media (max-width: 750px) {
+    .hextra-sidebar-container > .hextra-scrollbar:nth-child(2) > ul:nth-child(1) {
+        > li:nth-child(1) {
+            --hx-color-primary-600: #fe7e44 !important;
+            --hx-color-primary-400: #fe7e44 !important;
+        }
+    }
+}
+
 /* Invisible table borders */
 .features {
     table, th, td {

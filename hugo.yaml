@@ -1,6 +1,9 @@
 # Hugo configuration file
 title: Echo Nine
 
+enableInlineShortcodes: true
+
+
 # import hextra as module
 module:
   imports:
@@ -17,6 +20,11 @@ markup:
     noClasses: false
 
 menu:
+  sidebar:
+    - name: '{{< icon "discord" >}}123'
+      weight: 1
+      params:
+        type: search
   main:
     - name: Search
       weight: 1
@@ -44,6 +52,7 @@ menu:
         icon: github
 
 params:
+  enableInlineShortcodes: true
 
   banner:
     key: "work-in-progress"
@@ -69,4 +78,7 @@ params:
   theme:
     default: dark
     displayToggle: false
+
+  customJS:
+  - js/sidebar-icons.js
 
