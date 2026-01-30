@@ -1,12 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
 /* Increased margin between breadcrumbs and page content */
 .content {
     margin-top: 2em !important;
-}
-
-a[href*="getting-started"]::before { content: "🚀"; }
-
-.sidebar a:has-text("Getting Started")::before {
-  content: "🚀 ";
 }
 
 /* Kite Sidebar Color */
@@ -71,12 +67,11 @@ a[href*="getting-started"]::before { content: "🚀"; }
 
 .no-decoration > ul {
     list-style-type: none !important;
-    font-size: 24px !important;
 }
 
 /* No underline on urls */
-a {
-    text-decoration: none !important;
+a:not(.dummy) {
+    text-decoration: none;
 }
 
 /* No italic text on code block comments */
