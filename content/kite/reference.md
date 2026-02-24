@@ -1,7 +1,7 @@
 ---
 title: Reference
 type: docs
-weight: 3
+weight: 4
 ---
 Kite provides very basic set of APIs that would otherwise require user to manually manage lifecycle of some features. Our APIs include but are not limited to:
 

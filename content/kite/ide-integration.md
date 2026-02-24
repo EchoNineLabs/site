@@ -1,7 +1,7 @@
 ---
 title: IDE Integration
 type: docs
-weight: 4
+weight: 5
 ---
 
 Writing scripts in **[IntelliJ IDEA](https://www.jetbrains.com/idea/)** is pretty straightforward if you're already familiar that IDE. Most editor features should work after a little setup, which will be described in this section.

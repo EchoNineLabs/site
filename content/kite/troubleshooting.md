@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 type: docs
-weight: 5
+weight: 6
 ---
 Common problems and solutions.
 
