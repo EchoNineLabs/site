@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "Kite":
             case "LuaLink":
                 element.classList.add("hx:font-semibold")
-                element.style.textDecoration = "underline"
                 break;
             default:
                 break;

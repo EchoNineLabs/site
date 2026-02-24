@@ -17,7 +17,7 @@ return {
 
 In this example we will use [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) - a plugin you should already be familiar with.
 
-### Accessing Depencencies
+### Accessing Dependencies
 Next, assuming the plugin is installed and enabled on the server, any import and call to its API should work as expected.
 
 ```lua {filename="/plugins/LuaLink/scripts/example_script/main.lua"}
