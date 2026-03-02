@@ -289,17 +289,17 @@ This scheduler falls back to the main server thread if not running Folia.
 {{< tab >}}
 ```kts {filename="Functions"}
 // Schedules a task to run on the next tick.
-fun GlobalRegionsCheduler.run(task: (KiteScheduledTask) -> Unit): KiteScheduledTask
+fun GlobalRegionScheduler.run(task: (KiteScheduledTask) -> Unit): KiteScheduledTask
 
 // Schedules a task to run after specified delay.
-fun GlobalRegionsCheduler.runDelayed(
+fun GlobalRegionScheduler.runDelayed(
     delay: Long,
     unit: TimeUnit,
     task: (KiteScheduledTask) -> Unit
 ): KiteScheduledTask
 
 // Schedules a repeating task to start after specified delay.
-fun GlobalRegionsCheduler.runAtFixedRate(
+fun GlobalRegionScheduler.runAtFixedRate(
     initialDelay: Long = 0,
     period: Long,
     unit: TimeUnit,
