@@ -259,15 +259,15 @@ on<PlayerJoinEvent> { event ->
     // Welcoming player to the server.
     // NOTE: There is no need to schedule a task for that - this is just an example.
     event.player.scheduler.run {
-        it.sendPlainMessage("Hello, ${it.name} to our server!")
+        event.player.sendPlainMessage("Hello, ${it.name} to our server!")
     }
     // Kicking player after 30 seconds of playing on the server.
     event.player.scheduler.runDelayed(30, TimeUnit.SECONDS, {
-        it.kick(Component.text("You were playing for more than 30 seconds... That's too long! Please take a break."))
+        event.player.kick(Component.text("You were playing for more than 30 seconds... That's too long! Please take a break."))
     })
     // Adding one experience level to the player every 5 seconds.
     event.player.scheduler.runAtFixedRate(5, 5, TimeUnit.SECONDS, {
-        it.level = it.level + 1
+        event.player.level = event.player.level + 1
     })
 }
 ```
