@@ -36,10 +36,49 @@ There is one thing you need to enable before you can start writing scripts, and 
 
 <hr>
 
+### Dependencies
+Since the project itself is a Gradle project, all dependencies are managed via `build.gradle.kts` file.
+
+For example, if you would like to use a more recent version of Paper, configure build script like this:
+```kts {filename="build.gradle.kts"}
+dependencies {
+    // Excluding Paper API that Kite is depending on. (1.21.1)
+    api("dev.echonine.kite:kite:1.2.4") {
+        exclude(module = "paper-api")
+    }
+    // Declaring more up-to-date version of Paper API.
+    api("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+}
+```
+
+Using custom [**Dependencies**](/kite/dependencies) in your scripts?  
+Don't forget to also add them to your build script. Otherwise, they won't appear in code completions.
+```kts {filename="example.kite.kts"}
+@file:Repository("https://repo.extendedclip.com/releases/")
+@file:Dependency("me.clip:placeholderapi:2.11.7")
+```
+```kts {filename="build.gradle.kts"}
+repositories {
+    ...
+    maven { url = uri("https://repo.extendedclip.com/releases/") }
+}
+
+dependencies {
+    ...
+    api("me.clip:placeholderapi:2.11.7")
+}
+```
+
+More information about dependencies can be found here:
+{{< cards cols="3" >}}
+    {{< card link="/kite/dependencies" title="Dependencies" subtitle="Remote and Local Dependencies" >}}
+{{< /cards >}}
+
+<hr>
+
 ### Writing Scripts
-Scripts can be put pretty much anywhere but it is recommended to keep them in `src` directory.
+Scripts can be put pretty much anywhere, but it is recommended to keep them in `src` directory.
 
-You can also organize them within sub-directories like explained in [**Getting Started**](/kite/getting-started/#structure) guide but in mind importing additional files with `@file:Import`  is currently not supported due to editor bug / limitations.
-
+You can also organize them within subdirectories like explained in [**Getting Started**](/kite/getting-started/#structure) guide but keep in mind additional files imported via `@file:Import` will not appear in completions due to editor bug / limitation.
 
 {{% /steps %}}

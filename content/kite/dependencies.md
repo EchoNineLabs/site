@@ -32,17 +32,23 @@ Please refrain from declaring official Maven Central repository, as this can be 
 
 ### Adding Dependencies
 Dependencies can be specified per-script basis by adding a top-level `@file:Dependency` annotation.
-Annotation can be declared multiple times and you can add as many dependencies as you need.
+Annotation can be declared multiple times, and you can add as many dependencies as you need.
 
 ```kts
 @file:Dependency("com.github.ben-manes.caffeine:caffeine:3.2.3")
+```
+
+Trasntive dependency resolution can be disabled by setting `withTransitiveDependencies` to `false`.
+
+```kts
+@file:Dependency("groupId:artifactId:version", withTransitiveDependencies = false)
 ```
 
 <hr>
 
 ### Relocation (Optional)
 For those who need it, there's also a top-level `@file:Relocation` annotation that allows you to relocate a dependency using a specified pattern.
-Annotation can be declared multiple times and you can configure as many relocations as you need.
+Annotation can be declared multiple times, and you can configure as many relocations as you need.
 
 ```kts
 @file:Relocation("pattern.from", "pattern.to")

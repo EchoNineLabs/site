@@ -31,11 +31,6 @@ val sound = AdventureSound.sound("minecraft:entity.shulker.shoot", SoundSource.B
 
 <br>
 
-### External Libraries
-Dynamic library resolver - either via `@file:Repository` and `@file:Dependency` annotations or `libraries.json` configuration file - will be added in a future Kite release.
-
-<br>
-
 ### Unresolved References
 Certain forks introduce breaking changes to class loading and/or runtime isolation. This usually cause ***all*** scripts to fail compilation due to **unresolved reference** errors. We provide an experimental workaround for this problem but it is not guaranteed to work in all cases.
 
