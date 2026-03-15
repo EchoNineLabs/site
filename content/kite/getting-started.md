@@ -107,7 +107,7 @@ onLoad {
 ```
 ```kts
 onUnload {
-    println("Godbye, World!")
+    println("Goodbye, World!")
 }
 ```
 
