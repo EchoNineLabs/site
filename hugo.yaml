@@ -1,6 +1,9 @@
 # Hugo configuration file
 title: Echo Nine
 
+enableInlineShortcodes: true
+
+
 # import hextra as module
 module:
   imports:
@@ -44,6 +47,7 @@ menu:
         icon: github
 
 params:
+  enableInlineShortcodes: true
 
   banner:
     key: "work-in-progress"
