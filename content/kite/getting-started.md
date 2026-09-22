@@ -151,7 +151,7 @@ Majority of **Bukkit** and **Paper** imports can be omitted, as they are added a
 - `com.destroytokyo.paper`
 - `net.kyori.adventure.text`
 
-Anything else, such as external plugin APIs, must be imported before you can reference it in coded.
+Anything else, such as external plugin APIs, must be imported before you can reference it in code.
 ```kts
 import me.clip.placeholderapi.PlaceholderAPI
 
@@ -163,7 +163,7 @@ onLoad {
 In case you run into a type conflict problems, see:
 
 {{< cards cols="3" >}}
-  {{< card link="/docs/kite/troubleshooting#conflicting-imports" title="Troubleshooting" subtitle="Conflicting Imports" >}}
+  {{< card link="/kite/troubleshooting#conflicting-imports" title="Troubleshooting" subtitle="Conflicting Imports" >}}
 {{< /cards >}}
 
 <br>
@@ -172,7 +172,7 @@ In case you run into a type conflict problems, see:
 Learn more about provided APIs and examples on the [**Reference**](/kite/reference) page.
 
 {{< cards cols="3" >}}
-  {{< card link="/docs/kite/reference" title="Reference" subtitle="Kite built-in APIs reference." >}}
+  {{< card link="/kite/reference" title="Reference" subtitle="Kite built-in APIs reference." >}}
 {{< /cards >}}
 
 {{% /steps %}}
